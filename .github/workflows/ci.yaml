@@ -24,10 +24,6 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python setup.py install
-          python -m pip install openai[embeddings]
-          python -m pip install openai[wandb]
-          python -m pip install openai[datalib]
-          python -m pip install pytest pytest_mock
+          python -m pip install -e .[all]
       - name: Test with pytest
         run: pytest
