@@ -14,6 +14,10 @@ jobs:
       matrix:
         python-version: ["3.7.1", "3.8", "3.9", "3.10", "3.11"]
 
+    # This job sets up Python versions using Python images instead of
+    # actions/setup-python because Python 3.7.1 does not exist in
+    # the GitHub local cache. Once the support for Python 3.7.1 is
+    # dropped, this job can be simplified to use actions/setup-python.
     container:
       image: python:${{ matrix.python-version }}
 
