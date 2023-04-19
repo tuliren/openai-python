@@ -27,3 +27,5 @@ jobs:
           python -m pip install -e .[dev,datalib,wandb,embeddings]
       - name: Test with pytest
         run: python -m pytest
+        env:
+          OPENAI_API_KEY: {{ secrets.OPENAI_API_KEY }}
